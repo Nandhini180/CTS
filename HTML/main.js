@@ -1,27 +1,19 @@
-// 1. JavaScript Basics & Setup
 console.log("Welcome to the Community Portal");
 window.onload = () => alert("Page fully loaded!");
-
-// 2. Data Types & Operators
 const eventName = "Spring Festival";
 const eventDate = "2025-05-25";
 let availableSeats = 50;
 console.log(`Event: ${eventName} on ${eventDate} | Seats: ${availableSeats}`);
-
-// 3. Conditionals & Loop
 const events = [
   { name: "Spring Festival", date: "2025-05-25", seats: 50 },
   { name: "Clean-Up Drive", date: "2025-06-03", seats: 0 },
   { name: "Food Drive", date: "2025-06-10", seats: 30 }
 ];
-
 events.forEach(event => {
   if (new Date(event.date) > new Date() && event.seats > 0) {
     console.log(`Upcoming: ${event.name} (${event.date}) - ${event.seats} seats`);
   }
 });
-
-// 4. Functions & Closures
 function addEvent(name, date, seats) {
   events.push({ name, date, seats });
 }
@@ -38,8 +30,6 @@ const categoryCount = (() => {
   let total = 0;
   return () => ++total;
 })();
-
-// 5. Objects & Prototypes
 function Event(name, date, seats) {
   this.name = name;
   this.date = date;
@@ -48,22 +38,15 @@ function Event(name, date, seats) {
 Event.prototype.checkAvailability = function () {
   return this.seats > 0 ? "Available" : "Full";
 };
-
 const fest = new Event("Yoga Camp", "2025-07-01", 20);
 console.log(Object.entries(fest));
-
-// 6. Arrays
 events.push({ name: "Music Night", date: "2025-08-01", seats: 40 });
 const musicEvents = events.filter(e => e.name.includes("Music"));
 const displayNames = events.map(e => `Event: ${e.name}`);
 console.log(displayNames);
-
-// 7. DOM Manipulation
 document.querySelectorAll(".event-img").forEach(img => {
   img.addEventListener("click", () => alert("You clicked an event image!"));
 });
-
-// 8. Event Handling (linked to HTML already)
 function validatePhone() {
   const phone = document.getElementById("phone").value;
   if (!/^\d{10}$/.test(phone)) alert("Enter a valid 10-digit phone number.");
@@ -106,8 +89,6 @@ function findLocation() {
     { enableHighAccuracy: true, timeout: 10000 }
   );
 }
-
-// 9. Async Example
 async function fetchEvents() {
   try {
     const res = await fetch("https://jsonplaceholder.typicode.com/posts/1");
@@ -117,20 +98,14 @@ async function fetchEvents() {
     console.error("Failed to fetch events:", err);
   }
 }
-
-// 10. Modern JavaScript
 const cloneEvents = [...events];
 const [{ name: firstName }] = events;
 console.log(`First Event Name: ${firstName}`);
-
-// 11. Form Handling
 document.querySelector("form").addEventListener("submit", function (e) {
   e.preventDefault();
   const formData = new FormData(e.target);
   console.log("Form submitted:", Object.fromEntries(formData.entries()));
 });
-
-// 12. Simulated API Submit
 function submitToServer(data) {
   console.log("Sending data...", data);
   setTimeout(() => {
