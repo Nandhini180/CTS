@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class MultiplicationTable {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in); // Create a Scanner object
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Multiplication Table Generator");
         System.out.println("------------------------------");
         System.out.print("Enter a number to see its multiplication table: ");
