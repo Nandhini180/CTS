@@ -285,44 +285,6 @@
       $("#keyInput").keypress(() => alert("Key pressed!"));
     });
     </script>
-    <script>
-        $("#register form").submit(function(e) {
-          e.preventDefault();
-          $.post("php/register.php", {
-            name: $("#name").val(),
-            email: $("#email").val(),
-            phone: $("#phone").val(),
-            event_type: $("#eventType").val()
-          }, function(data) {
-            alert(data);
-          });
-        });
-      </script>
-      <script>
-        $("#register form").submit(function(e) {
-          e.preventDefault();
-          $.ajax({
-            url: "https://localhost:5001/api/register",
-            type: "POST",
-            contentType: "application/json",
-            data: JSON.stringify({
-              name: $("#name").val(),
-              email: $("#email").val(),
-              phone: $("#phone").val(),
-              eventType: $("#eventType").val()
-            }),
-            success: function(response) {
-              alert(response);
-            },
-            error: function(err) {
-              alert("Error: " + err.responseText);
-            }
-          });
-        });
-      </script>
-      
-    
-
 </body>
 </html>
  
