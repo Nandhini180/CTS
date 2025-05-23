@@ -36,6 +36,6 @@ public class SimpleCalculator {
                 System.out.println("Error: Invalid operator. Please choose from +, -, *, /.");
                 break;
         }
-        scanner.close(); // Close the scanner to prevent resource leaks
+        scanner.close(); 
     }
 }
